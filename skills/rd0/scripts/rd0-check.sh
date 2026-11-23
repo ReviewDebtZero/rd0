@@ -48,9 +48,12 @@ if ! command -v jinx >/dev/null; then
 else
   if [ -z "$queue" ] && command -v gh >/dev/null && gh auth status >/dev/null 2>&1; then
     queue="$work/queue.json"
-    gh pr list --state open --limit 200 --json number,title,body,author,url,files \
+    if ! gh pr list --state open --limit 200 --json number,title,body,author,url,files \
       | jq '[.[] | {number, title, body, author: .author.login, html_url: .url, files: [.files[].path]}]' \
-      > "$queue"
+      > "$queue"; then
+      echo "could not list open PRs with gh"
+      queue=""
+    fi
   fi
   if [ -z "$queue" ]; then
     echo "no open-PR list (log in with gh, or pass --queue FILE); skipped"
