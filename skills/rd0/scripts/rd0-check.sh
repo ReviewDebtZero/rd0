@@ -37,7 +37,7 @@ fi
 echo; echo "== Trellis: repo rules and agent slop"
 if command -v trellis >/dev/null; then
   trellis scan --base "$base" --title "$title" --body "$body"
-  trellis check --base "$base"
+  trellis check --base "$base" --title "$title" --body "$body"
 else
   echo "trellis not installed; skipped"
 fi
