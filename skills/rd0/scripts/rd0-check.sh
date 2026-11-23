@@ -29,15 +29,15 @@ fi
 
 echo "== Fence: changes outside the task"
 if command -v fence >/dev/null; then
-  fence check --diff "$work/pr.diff" --title "$title" --body "$body"
+  fence check --diff "$work/pr.diff" --title="$title" --body="$body"
 else
   echo "fence not installed; skipped"
 fi
 
 echo; echo "== Trellis: repo rules and agent slop"
 if command -v trellis >/dev/null; then
-  trellis scan --base "$base" --title "$title" --body "$body"
-  trellis check --base "$base" --title "$title" --body "$body"
+  trellis scan --base "$base" --title="$title" --body="$body"
+  trellis check --base "$base" --title="$title" --body="$body"
 else
   echo "trellis not installed; skipped"
 fi
