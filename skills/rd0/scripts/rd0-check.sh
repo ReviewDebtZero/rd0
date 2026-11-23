@@ -58,7 +58,12 @@ else
   if [ -z "$queue" ]; then
     echo "no open-PR list (log in with gh, or pass --queue FILE); skipped"
   else
-    jq -n --arg t "$title" --arg b "$body" '{number: 0, title: $t, body: $b}' > "$work/new.json"
+    self_pr="$(gh pr view --json number -q .number 2>/dev/null || true)"
+    if [ -n "$self_pr" ]; then
+      jq --argjson n "$self_pr" '[.[] | select(.number != $n)]' "$queue" > "$work/queue_others.json"
+      queue="$work/queue_others.json"
+    fi
+    jq -n --arg t "$title" --arg b "$body" --argjson n "${self_pr:-0}" '{number: $n, title: $t, body: $b}' > "$work/new.json"
     jinx check "$work/new.json" --open-queue "$queue" --diff "$work/pr.diff"
   fi
 fi
