@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img"
+     aria-label="rd0: review debt, to zero. Three free checks for coding-agent pull requests: Jinx finds duplicates, Trellis enforces repo rules, Fence flags changes the issue never asked for.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1023"/><stop offset="0.55" stop-color="#151a3d"/><stop offset="1" stop-color="#0c2a3a"/>
+    </linearGradient>
+    <radialGradient id="gA" cx="0.12" cy="0.1" r="0.6"><stop offset="0" stop-color="#6366f1" stop-opacity="0.45"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gB" cx="0.92" cy="0.95" r="0.55"><stop offset="0" stop-color="#14b8a6" stop-opacity="0.4"/><stop offset="1" stop-color="#14b8a6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#60a5fa"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+    <linearGradient id="zero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#22c55e"/></linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#fff" fill-opacity="0.06"/></pattern>
+    <clipPath id="r"><rect width="1280" height="400" rx="28"/></clipPath>
+    <style>
+      .m { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+      .s { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="1280" height="400" fill="url(#bg)"/><rect width="1280" height="400" fill="url(#gA)"/>
+    <rect width="1280" height="400" fill="url(#gB)"/><rect width="1280" height="400" fill="url(#dots)"/>
+  </g>
+  <!-- mark -->
+  <g transform="translate(64 34) scale(0.4)">
+    <rect x="0" y="62" width="196" height="34" rx="17" fill="url(#ink)"/>
+    <rect x="0" y="130" width="132" height="34" rx="17" fill="url(#ink)" opacity="0.8"/>
+    <rect x="0" y="198" width="68" height="34" rx="17" fill="url(#ink)" opacity="0.6"/>
+    <circle cx="268" cy="230" r="82" fill="none" stroke="url(#zero)" stroke-width="34"/>
+    <path d="M230 232l26 26 50-56" fill="none" stroke="#f8fafc" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text class="m" x="224" y="132" font-size="84" font-weight="700" fill="#f8fafc">rd<tspan fill="#2dd4bf">0</tspan></text>
+  <text class="s" x="64" y="226" font-size="38" font-weight="700" fill="#f8fafc">Review debt, <tspan fill="url(#ink)">to zero.</tspan></text>
+  <text class="s" x="64" y="268" font-size="21" fill="#cbd5e1">Agents write the PRs. Humans still review them. rd0 removes the review</text>
+  <text class="s" x="64" y="296" font-size="21" fill="#cbd5e1">work that shouldn't exist. Free, CPU only, no LLM, no API key.</text>
+  <!-- tool chips -->
+  <g class="m" font-size="19">
+    <g transform="translate(800 70)">
+      <rect width="416" height="76" rx="14" fill="#0f172a" fill-opacity="0.75" stroke="#60a5fa" stroke-opacity="0.6"/>
+      <text x="22" y="32" font-weight="700" fill="#60a5fa">jinx</text>
+      <text x="22" y="58" class="s" font-size="17" fill="#e2e8f0">Is another open PR already doing this?</text>
+    </g>
+    <g transform="translate(800 162)">
+      <rect width="416" height="76" rx="14" fill="#0f172a" fill-opacity="0.75" stroke="#a78bfa" stroke-opacity="0.6"/>
+      <text x="22" y="32" font-weight="700" fill="#a78bfa">trellis</text>
+      <text x="22" y="58" class="s" font-size="17" fill="#e2e8f0">Does it break the rules in AGENTS.md?</text>
+    </g>
+    <g transform="translate(800 254)">
+      <rect width="416" height="76" rx="14" fill="#0f172a" fill-opacity="0.75" stroke="#2dd4bf" stroke-opacity="0.6"/>
+      <text x="22" y="32" font-weight="700" fill="#2dd4bf">fence</text>
+      <text x="22" y="58" class="s" font-size="17" fill="#e2e8f0">Does it change more than the issue asked?</text>
+    </g>
+  </g>
+  <text class="m" x="64" y="352" font-size="16" fill="#64748b">github.com/ReviewDebtZero</text>
+</svg>
