@@ -87,7 +87,7 @@ export function Tools() {
               }
               right={<span className="text-fg-faint">{t.status}</span>}
             >
-              <div className="grid gap-6 p-5 lg:grid-cols-[1fr_1.1fr]">
+              <div className="grid gap-6 p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
                 <div className="min-w-0">
                   <h3 className="text-2xl font-bold">{t.name}</h3>
                   <p className="mt-1 text-[17px] text-accent">{t.question}</p>
@@ -146,8 +146,8 @@ export function Skill() {
   return (
     <Section id="skill" index="03" label="agent skill">
       <Heading lead="Better still:" accent="the agent runs them on itself." />
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1.3fr]">
-        <div className="space-y-4 text-[15px] leading-relaxed text-fg-dim">
+      <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)]">
+        <div className="min-w-0 space-y-4 text-[15px] leading-relaxed text-fg-dim">
           <p>
             The coding agent already has the task, the diff and the open PRs. The{" "}
             <span className="text-fg">rd0 skill</span> tells it to run all three checks before it opens
@@ -178,7 +178,7 @@ export function Skill() {
           </a>
         </div>
         <Frame title="rd0-check.sh on an agent branch">
-          <pre className="overflow-x-auto p-4 font-mono text-[12.5px] leading-relaxed text-fg-dim">
+          <pre tabIndex={0} role="region" aria-label="rd0-check.sh output" className="overflow-x-auto p-4 font-mono text-[12.5px] leading-relaxed text-fg-dim">
             {SKILL_RUN}
           </pre>
         </Frame>
