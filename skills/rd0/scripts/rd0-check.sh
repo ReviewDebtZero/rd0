@@ -22,7 +22,7 @@ work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 git rev-parse --verify --quiet "$base^{commit}" >/dev/null \
   || { echo "rd0: base $base not found (try --base main, or git fetch origin)" >&2; exit 2; }
-git diff "$base...HEAD" > "$work/pr.diff" || { echo "rd0: git diff $base...HEAD failed" >&2; exit 2; }
+git diff --no-color --no-ext-diff "$base...HEAD" > "$work/pr.diff" || { echo "rd0: git diff $base...HEAD failed" >&2; exit 2; }
 if [ ! -s "$work/pr.diff" ]; then
   echo "rd0: no changes between $base and HEAD"; exit 0
 fi
